@@ -4,8 +4,8 @@
 title: "Dnd Data"
 subtitle: ""
 summary: ""
-authors: []
-tags: []
+authors: [admin]
+tags: [dnd]
 categories: []
 date: 2020-02-08T10:37:44-08:00
 lastmod: 2020-02-08T10:37:44-08:00
