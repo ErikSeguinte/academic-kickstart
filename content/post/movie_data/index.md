@@ -27,7 +27,8 @@ image:
 #   Otherwise, set `projects = []`.
 projects: []
 ---
-
+# The Best Movie
+## Rating
 Using data from Kaggle's [The Movies Dataset](https://www.kaggle.com/rounakbanik/the-movies-dataset), let's determine what makes the best movies.
 The Data set gives us ratings from The Movie Database(tMDb), where movies are rated out of 10. And the top 10 movies are:
 
@@ -44,6 +45,7 @@ The Data set gives us ratings from The Movie Database(tMDb), where movies are ra
 | 550 | Fight Club                      |            8.3 |         9678 |
 | 637 | Life Is Beautiful               |            8.3 |         3643 |
 
+## Other Ratings
 But that's not the whole story. Included in the database is a set of 26,024,289 individual ratings by users. Since we're not making individual movie recomendations -- that's another unit -- let's aggregate the scores into a mean, merge them into the movie database, and see how that compares to the tMDB ratings. After averaging, we get the following top 10.
 
 
@@ -60,6 +62,8 @@ But that's not the whole story. Included in the database is a set of 26,024,289 
 | 1248 | Hannibal Rising                    |  4.15724 |        5199 |
 |  950 | Ice Age: The Meltdown              |  4.15008 |        3628 |
 
+## Revenue
+
 It's a very different list, with zero overlap. If only there was a way to scale or combine them. But we're not done yet. There's another way you could define the best movies. And this is the one the studios care about. How much money they made. The Dataset also provides revenue, so let's see what that list looks like.
 
 | ID   | title                                         |     revenue |
@@ -75,6 +79,7 @@ It's a very different list, with zero overlap. If only there was a way to scale 
 |  121 | The Lord of the Rings: The Two Towers         | 9.26287e+08 |
 | 1893 | Star Wars: Episode I - The Phantom Menace     | 9.24318e+08 |
 
+### Adjusted Revenue
 Another new list. But that's not quite right. The value of a dollar has changed over time. 1 billion 1920 dollars isn't the same as 1 billion 2020 dollars. So using a third dataset provided by the federal government, we can adjust the values based on the year that these movies were released.
 
 |      | title                                         |   adjusted_revenue |
@@ -89,6 +94,8 @@ Another new list. But that's not quite right. The value of a dollar has changed 
 | 1892 | Return of the Jedi                            |        1.36123e+09 |
 | 1893 | Star Wars: Episode I - The Phantom Menace     |        1.31364e+09 |
 |  671 | Harry Potter and the Philosopher's Stone      |        1.30554e+09 |
+
+## PCA Rating
 
 So now we have 3 different metrics with scales that go from 0-5 for one, to billions for another. Which should we use to determine the best movie? With the magic of principle component analysis, we don't have to decide! After waving the PCA wand combining the ratings from 2 different databases along with the adjusted revenue, we get the following top 10 movies.
 
@@ -107,10 +114,20 @@ So now we have 3 different metrics with scales that go from 0-5 for one, to bill
 
 So the original Star Wars is the best movie.
 
-But now that we have this standardized metric, let's have a little fun with it.
+# Data Insights
+
+## Movies through the years
 It's been said that classic movies are better, and that modern movies are just terrible in comparison.
-We can graph time against the PCA rating to see if that's true
+We can graph time against the PCA rating to see if that's true. And from this graph, it becomes clear that movies hit a high point in the 70s and really took a nose dive in the 2000s
 
-{{< figure library="true" src="pca_years.png" title="A caption" lightbox="true" >}}
+{{< figure src="pca_years.png" title="PCA ratings through the years." lightbox="true" >}}
 
-{{< figure library="true" src="pca_genre.png" title="A caption" lightbox="true" >}}
+If the Null hypothesis were that movies in 1970 were better than movies in 2000s, we would have to reject it with a calculated P value of $4.54 \times 10^{-05}$
+
+## Genres
+But what else might effect a movies ratings? Are adventure movies better than Westerns? Are Romance movies better than comedies?
+
+{{< figure src="pca_genre.png" title="PCA rating of Genres" lightbox="true" >}}
+
+From the data, the clear loser are Foreign Films, and that War movies are a safe bet.
+
