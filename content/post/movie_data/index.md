@@ -3,9 +3,9 @@
 
 title: "What makes the best movie?"
 subtitle: "Analyzing data to determine the best movies."
-summary: ""
+summary: "Using data to determine a standardized metric and using it to glean insights."
 authors: []
-tags: []
+tags: ['lambda school', 'data', 'data science', 'build week', 'DSPT5']
 categories: []
 date: 2020-03-03T19:21:02-08:00
 lastmod: 2020-03-03T19:21:02-08:00
