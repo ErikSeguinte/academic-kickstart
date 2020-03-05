@@ -131,3 +131,12 @@ But what else might effect a movies ratings? Are adventure movies better than We
 
 From the data, the clear loser are Foreign Films, and that War movies are a safe bet.
 
+## What else?
+Clearly, there are other things that could affect the rating of a movie. Here are possible other insights that might be scraped from the data
+
+* Who is the best director of all time?
+
+* Which movies had the greatest return on investment given their budget and their revenue?
+
+* Should Directors stay in their lane? In other words, are directors who have a body of work that is majority one genre able to switch to a completely different genre and still make movies that are just as good? For example, a renowned Horror director might decide to do a romance film. How do they do? How about the other way around?
+
