@@ -1,31 +1,7 @@
 ---
-# Documentation: https://sourcethemes.com/academic/docs/managing-content/
+title: Dungeons and Dragons and Stats
+date: 2020-02-07
 
-title: "Dnd Data"
-subtitle: ""
-summary: ""
-authors: [admin]
-tags: [dnd]
-categories: []
-date: 2020-02-08T10:37:44-08:00
-lastmod: 2020-02-08T10:37:44-08:00
-featured: false
-draft: false
-
-# Featured image
-# To use, add an image named `featured.jpg/png` to your page's folder.
-# Focal points: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight.
-image:
-  caption: ""
-  focal_point: ""
-  preview_only: false
-
-# Projects (optional).
-#   Associate this post with one or more of your projects.
-#   Simply enter your project's folder or file name without extension.
-#   E.g. `projects = ["internal-project"]` references `content/project/deep-learning/index.md`.
-#   Otherwise, set `projects = []`.
-projects: []
 ---
 
 # Dungeons And Dragons and Stats
@@ -489,7 +465,7 @@ dnd_df['just_class1'].value_counts(normalize=True).plot(kind='barh');
 ```
 
 
-![png](./index_15_0.png)
+![png](index_files/index_15_0.png)
 
 
 There's a lot in there! Let's filter our df to only include the top 12 or so classes.
@@ -593,7 +569,7 @@ graph_counts(dnd_df, 'just_class1')
 ```
 
 
-![png](./index_26_0.png)
+![png](index_files/index_26_0.png)
 
 
 
@@ -1726,7 +1702,7 @@ graph_counts(dnd_df, 'race')
 ```
 
 
-![png](./index_36_0.png)
+![png](index_files/index_36_0.png)
 
 
 
@@ -2088,7 +2064,7 @@ sns.heatmap(race_and_class_normalized, annot = True)
 
 
 
-![png](./index_39_1.png)
+![png](index_files/index_39_1.png)
 
 
 
@@ -2403,7 +2379,7 @@ sns.heatmap(races_and_alignments)
 
 
 
-![png](./index_49_1.png)
+![png](index_files/index_49_1.png)
 
 
 # Are paladins more lawful than rogues?
